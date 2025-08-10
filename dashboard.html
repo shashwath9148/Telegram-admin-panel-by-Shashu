@@ -1,35 +1,40 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Bot Admin Dashboard</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body { font-family: Inter, Roboto, sans-serif; margin: 18px; }
-    .card { padding:12px; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,.06); margin-bottom:12px; }
-    table { width:100%; border-collapse:collapse; }
-    th,td { padding:8px; border-bottom:1px solid #eee; text-align:left; }
-    button { padding:6px 10px; border-radius:6px; cursor:pointer; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <script src="/static/dashboard.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f8fa; margin: 0; padding: 0; }
+        header { background: #333; color: #fff; padding: 1rem; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
+        th { background: #444; color: white; }
+        button { padding: 5px 10px; border: none; cursor: pointer; }
+        .ban { background: red; color: white; }
+        .unban { background: green; color: white; }
+    </style>
 </head>
 <body>
-  <h2>Telegram Bot Admin</h2>
-  <div class="card">
-    <label>Admin secret: <input id="secret" value="supersecret" /></label>
-    <button onclick="loadUsers()">Load users</button>
-    <button onclick="loadStats()">Refresh stats</button>
-  </div>
+<header>
+    <h1>Telegram Bot Admin Panel</h1>
+</header>
 
-  <div class="card">
-    <h3>Stats</h3>
-    <div id="stats">—</div>
-  </div>
-
-  <div class="card">
-    <h3>Users</h3>
-    <div id="users">No data</div>
-  </div>
-
-  <script src="/static/dashboard.js"></script>
+<section>
+    <h2>User List</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Banned</th>
+                <th>Premium</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
 </body>
 </html>
