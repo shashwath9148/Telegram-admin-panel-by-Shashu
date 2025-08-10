@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Bot Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Inter, Roboto, sans-serif; margin: 18px; }
+    .card { padding:12px; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,.06); margin-bottom:12px; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:8px; border-bottom:1px solid #eee; text-align:left; }
+    button { padding:6px 10px; border-radius:6px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h2>Telegram Bot Admin</h2>
+  <div class="card">
+    <label>Admin secret: <input id="secret" value="supersecret" /></label>
+    <button onclick="loadUsers()">Load users</button>
+    <button onclick="loadStats()">Refresh stats</button>
+  </div>
+
+  <div class="card">
+    <h3>Stats</h3>
+    <div id="stats">—</div>
+  </div>
+
+  <div class="card">
+    <h3>Users</h3>
+    <div id="users">No data</div>
+  </div>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
